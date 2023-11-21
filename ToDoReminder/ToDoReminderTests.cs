@@ -24,14 +24,19 @@ namespace ToDoReminder
 
         }
 
-       
+        [TearDown]
+
+        public void CloseApp()
+        {
+            driver.Quit();
+        }
 
        
 
         [Test]
         public void Test_AddFirstTask()
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(10000);
 
             var newActivity = driver.FindElementById("com.ToDoReminder.gen:id/uAddReminderMenuItem");
             newActivity.Click();
