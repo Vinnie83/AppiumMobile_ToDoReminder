@@ -49,17 +49,23 @@ namespace ToDoReminder
             var newDate = driver.FindElementById("com.ToDoReminder.gen:id/uSelectDateTextView");
             newDate.Click();
 
-            var dateButton = driver.FindElementByXPath("//android.view.View[@content-desc=\"16 November 2023\"]");
+            var dateButton = driver.FindElementByXPath("//android.view.View[@content-desc=\"24 November 2023\"]");
             dateButton.Click();
 
             var okButton = driver.FindElementById("android:id/button1");
             okButton.Click();
 
+            Thread.Sleep(10000);
+
             var saveButton = driver.FindElementById("com.ToDoReminder.gen:id/uSaveBtn");
             saveButton.Click();
 
+            Thread.Sleep(10000);
+
             var result = driver.FindElementById("com.ToDoReminder.gen:id/uTitleTextView");
-            
+
+            Thread.Sleep(10000);
+
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Text, Is.EqualTo("Pregled Viki"));
 
